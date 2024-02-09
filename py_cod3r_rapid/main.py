@@ -32,3 +32,15 @@
 # resultado = a + b
 # print(a)
 # print(resultado)
+
+# from funcoes import args_1
+# # s = args_1.soma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+# # print(s)
+# # args_1.resultado_final(a=1, b=2, c=3)
+# resultado = args_1.resultado_final(nome='Danniel', nota=3)
+# print(resultado)
+
+# from funcoes import funcional
+# funcional.somar(2, 3)
+
+# import funcoes.map_reduce
