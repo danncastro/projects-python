@@ -1,13 +1,14 @@
-# Conversão de Tipos
+# Conversão de Tipos: Alterando o tipo da variavel
 
-a = 2 # Variavel a recebe o valor 2
-b = '3' # Variavel b recebe o valor 3
-print(type(a)) # Retorna o tipo da variavel a, que no caso é um inteiro
-print(type(b)) # Retorna o tipo da variavel b, que no caso é uma string
+a = 2 
+b = '3'
 
-print(a + int(b)) # Converte a variavel b que é uma string em um número inteiro
-print(str(a) + b) # Converte a variavel a que é um número inteiro em uma string
+print(f'Retorna o tipo da variavel A={a} - [{type(a)}]')
+print(f'Retorna o tipo da variavel B={b} - [{type(b)}]')
 
-print(type(str(a))) # Retorna que a variavel a é uma string, mesmo que inicialmente ela tenha sido atribuida como inteiro
+print(f'Converte a variavel B em um número inteiro - [{a + int(b)}] [{type(b)}]') 
+print(f'Converte a variavel A em uma string - [{str(a) + b}] [{type(a)}]') 
 
-print(2 + int('2 Bom número')) # Ocorrerá um erro, pois mesmo que estejamos convertendo a expressão em um inteiro, não é possivel converter texto em base 10 
+print(f'Retorna que a variavel A é uma String, mesmo que inicialmente ela tenha sido atribuida como inteiro - [{type(str(a))}]')
+
+# print(2 + int('2 Bom número')) # Ocorrerá um erro, pois mesmo que estejamos convertendo a expressão em um inteiro, não é possivel converter texto em base 10 

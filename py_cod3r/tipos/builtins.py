@@ -1,20 +1,20 @@
-# Builtins
+# Builtins: Metodos internos das funções
 
-exemplo1 = type(1) # Retorna qual o tipo de classe está sendo atribuida a variavel
-print(exemplo1)
-
-exemplo2 = __builtins__.type('Fala Galera!') # Demonstra como a função type é chamado através da utilização do modúlo builtins
-print(exemplo2)
-
-exemplo3 = __builtins__.print('Fala Galera!') # Demonstra como a funcionalidade do print é chamado através da utilização do modúlo builtins
-
-# help(dir) # Trás uma tela de ajuda que explica a funcionalidade informada
+# help(f'Trás uma tela de ajuda que explica a funcionalidade informada [{dir}])
 # __builtins__.help(__builtins__.dir)
 
-print(dir()) # Trás o que está atribuido ao escopo global
-print(dir(__builtins__)) # Trás informação das funcionalidas ou atribuições do parametro
+exemplo1 = type(1)
+print(f'Retorna qual o tipo de classe do elemento atribuido a variavel - [{exemplo1}]')
 
-# Exemplo real
+exemplo2 = __builtins__.type('Fala Galera!')
+print(f'Retorna o tipo de classe atribuido ao elemento, porém utilizando um metódo interno da função - [{exemplo2}]')
+
+exemplo3 = __builtins__.print('Retorna uma mensagem em tela utilizando um metódo interno da função - [Fala Galera!]') 
+
+print(f'Retorna na tela os elementos adicionados ao escopo global[{dir()}]')
+print(f'Retorna na tela as funcionalidades disponibilizadas dentro do método builtins - [{dir(__builtins__)}]')
+
+# Exemplo
 nome = 'Danniel Gutierres de Castro'
 print(type(nome))
 print(__builtins__.len(nome))

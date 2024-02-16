@@ -1,13 +1,8 @@
 # Coerção Automática
 
-print(type(10 / 2)) # Retorna uma classe do tipo Float
-
-print(type(10 // 3)) # Retorna uma classe do tipo Inteiro, pois as duas barras representam uma divisão inteira em python
-
-print(type(10 // 3.3)) # Retorna uma classe do tipo Float, mesmo utilizando as duas barras, o valor da divisão é um número flutuante.
-
-print(type(10 / 2.5)) # Retorna uma classe do tipo Float
-
-print(type(2 + True)) # Retorna uma classe do tipo Inteiro
-
-print(type(2.5 + False)) # Retorna uma classe do tipo Float
+print(f'Retorna um elemento do tipo Float - [{type(10 / 2)}]')
+print(f'Retorna um elemento do tipo Inteiro, pois duas barras representam uma divisão inteiro - [{type(10 // 3)}]')
+print(f'Retorna um elemento do tipo Float, mesmo utilizando duas barras, um dos elementos da divisão é um número flutuante. - [{type(10 // 3.3)}]')
+print(f'Retorna um elemento do tipo Float - [{type(10 / 2.5)}]')
+print(f'Retorna um elemento do tipo Inteiro - [{type(2 + True)}]')
+print(f'Retorna um elemento do tipo Float - [{type(2.5 + False)}]')
