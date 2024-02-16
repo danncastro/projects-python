@@ -1,13 +1,13 @@
 # Builtins: Metodos internos das funções
 
-# help(f'Trás uma tela de ajuda que explica a funcionalidade informada [{dir}])
+# help(f'Trás uma tela de ajuda que explica as funcionalidades informadas [{dir}])
 # __builtins__.help(__builtins__.dir)
 
 exemplo1 = type(1)
-print(f'Retorna qual o tipo de classe do elemento atribuido a variavel - [{exemplo1}]')
+print(f'Retorna qual o tipo de dado foi atribuido a variavel - [{exemplo1}]')
 
 exemplo2 = __builtins__.type('Fala Galera!')
-print(f'Retorna o tipo de classe atribuido ao elemento, porém utilizando um metódo interno da função - [{exemplo2}]')
+print(f'Retorna qual o tipo de dado foi atribuido a variavel, porém utilizando um metódo interno da função - [{exemplo2}]')
 
 exemplo3 = __builtins__.print('Retorna uma mensagem em tela utilizando um metódo interno da função - [Fala Galera!]') 
 

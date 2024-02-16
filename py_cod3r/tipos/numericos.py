@@ -1,37 +1,37 @@
-# Tipos Númericos
+# Tipos Númericos: Disponibilidades da função
 
-print(dir(int)) # Retorna as funcionalidas disponiveis na função Inteiros
-print(dir(float)) # Retorna as funcionalidas disponiveis na função Float
+print(f'Retorna as funcionalidas disponiveis nos tipos de dados Inteiros - [{dir(int)}]')
+print(f'Retorna as funcionalidas disponiveis nos tipos de dados Float - [{dir(float)}]')
 
-a = 5 # Atribui o valor 5 a variavel a
-b = 2.5 # Atribui o valor 2.5 a variavel b
+a = 5 
+b = 2.5
 
-print(type(a / b)) # Retorna um tipo Float, por que todas operações efetuadas com um float, retorna float
-print(type(a + b)) # Retorna um tipo Float
-print(type(a * b)) # Retorna um tipo Float
+print(f'Retorna um tipo de dado Float, por que todas operações efetuadas com um Float, retornam Float - [{type(a / b)}]') # 
+print(f'Retorna um tipo de dado Float - [{type(a + b)}]') 
+print(f'Retorna um tipo de dado Float - [{type(a * b)}]')
 
-print(type(a)) # Retorna o tipo de função atribuido a variavel a
-print(type(b)) # Retorna o tipo de função atribuido a variavel b
+print(f'Retorna qual o tipo de dado atribuido a variavel A [{type(a)}]')
+print(f'Retorna qual o tipo de dado atribuido a variavel B [{type(b)}]')
 
-print(b.is_integer()) # Retorna um valor booleano de False para caso a variavel B não seja um inteiro 
-print(5.0.is_integer()) # Retorna um valor booleano de True, por que embora o 5.0 seja um tipo Float, a 0 não é descartado na resolução
+print(f'[Retorna um valor booleano(True/False) para caso a variavel B seja um tipo de dado Inteiro  - [{b.is_integer()}]')
+print(f'[Retorna um valor booleano(True/False) para caso a expressão seja um tipo de dado Inteiro, embora o 5.0 seja um tipo Float, 0 não é descartado na resolução  - [{5.0.is_integer()}]')
 
-print(int.__add__(2, 3)) # Retorna a soma dos valores 2 + 3, a função __add__ está disponivel dentro do metodo Inteiro.
+print(f'Retorna a soma dos valores 2 + 3, a função __add__ está disponivel dentro do metodo Inteiro. - [{int.__add__(2, 3)}]')
 
-print((-2).__abs__()) # Retorna um valor sempre absoluto, seja ele Inteiro negativo
-print(abs(-2)) # Metodo abreviado do metodo __abs__ utilzado pela função abs
+print(f'Retorna um valor sempre absoluto, seja ele Inteiro negativo - [{(-2).__abs__()}]')
+print(f'Metodo abreviado do metodo __abs__ utilzado pela função abs - [{abs(-2)}]')
 
-print((-3.6).__abs__())  # Retorna um valor sempre absoluto, seja ele Float negativo
-print(abs(3.6)) # Metodo abreviado do metodo __abs__ utilzado pela função abs
+print(f'Retorna um valor sempre absoluto, seja ele Float negativo - [{(-3.6).__abs__()}]')
+print(f'Metodo abreviado do metodo __abs__ utilzado pela função abs - [{abs(3.6)}]') # 
 
 # Decimal
 
-from decimal import Decimal, getcontext # Importa do modulo decimal, a função Decimal e getcontext unicamente.
+from decimal import Decimal, getcontext # Importa do modulo decimal, unicamente as função Decimal e getcontext.
 
-print(Decimal(1) / Decimal(7)) # Retorna de forma decimal a divisão do de 1 por 7
+print(f'Retorna de forma decimal a divisão de 1 por 7 - [{Decimal(1) / Decimal(7)}]')
 
 getcontext().prec = 3 # Informa quantas casas decimais serão apresentadas em tela
-print(Decimal(1.1) + Decimal(2.2)) # Retorna a soma dos valores 1.1 + 2.2 com a quantidade de casas decimais definidas em getcontext
+print(f'Retorna a soma dos valores 1.1 + 2.2 com a quantidade de casas decimais definidas em getcontext - [{Decimal(1.1) + Decimal(2.2)}]')
 
 import decimal # Importa todo o modulo decimal
-print(dir(decimal)) # Retorna as funções disponibilizadas no modulo decimal
+print(f'Retorna as funções disponibilizadas no modulo decimal - [{dir(decimal)}]')

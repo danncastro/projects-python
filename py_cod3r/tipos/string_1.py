@@ -1,19 +1,19 @@
-# Tipo Strings
+# Tipo Strings: Funcionalidades disponiveis
 
-print(dir(str)) # Retorna as funcionalidades disponiveis na função string
+print(f'Retorna as funcionalidades disponiveis nas funções da String - [{dir(str)}]')
 
-nome = 'Danniel Castro' # Atribui um texto a variavel nome
-print(nome) # Retorna o conteúdo atribuido a variavel
-print(nome[0]) # Retorna em formato de indice o valor 0 da atribuição da variavel
+nome = 'Danniel Castro'
+print(f'Retorna o conteúdo atribuido a variavel - [{nome}]')
+print(f'Retorna o elemento de indice 0 atribuido a variavel - [{nome[0]}]')
 
 # nome[0] = 'P' # Gerará um erro pois não é possivel alterar um valor de indice especifico atribuido a uma variavel
-
 # print('Marca d 'água') # Gerará um erro de sintax pois está escapando o valor da string
-print("Danniel D' Castro") # Resolveria o problema de sintaxe sitado acima
-print('Danniel D\' Castro') # Outro metodo de resolução do problema de sintaxe
 
-texto = 'Texto entre apostrófos pode ter "aspas"' # Apenas demonstrando que o contrario também pode funcionar
-print(texto)
+print('Resolveria o problema de sintaxe citado acima', "[Danniel D' Castro]")
+print('Outro metodo de resolução do problema de sintaxe', '[Danniel D\' Castro]')
+
+texto = 'Texto entre apostrófos pode ter "aspas"'
+print(f'Apenas demonstrando que também é possivel adicionar aspas aos apostrófos - [{texto}]')
 
 doc = """Texto com múltiplas
     ... linhas"""
