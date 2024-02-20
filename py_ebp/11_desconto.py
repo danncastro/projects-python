@@ -8,8 +8,8 @@ DESCONTO DE MERCADORIA: Solicite o preço de uma mercadoria e o percentual de de
 mercadoria = float(input('Digite o valor do produto: '))
 porcentagem = float(input('Digite o percentual de desconto: '))
 
-percentual_desconto = porcentagem / 100
-desconto = mercadoria * percentual_desconto
+percentualDesconto = porcentagem / 100
+desconto = mercadoria * percentualDesconto
 preco = mercadoria - desconto
 
 print(f'A mercadorio tem R${desconto:.2f} de desconto, o preço fica: R${preco:.2f}')

@@ -8,8 +8,8 @@ Tempo Estimado = Distãncia / Velocidade média
 ''' 
 
 distancia = 15
-velocidade_media = 3
+velocidadeMedia = 3
 
-tempo_estimado = distancia / velocidade_media
+tempoEstimado = distancia / velocidadeMedia
 
-print(f'A pessoa percorreu {distancia}km a uma velocidade média de {tempo_estimado:.0f}km/h')
+print(f'A pessoa percorreu {distancia}km a uma velocidade média de {tempoEstimado:.0f}km/h')

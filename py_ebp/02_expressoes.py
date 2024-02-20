@@ -7,6 +7,6 @@ A Empresa X determinou o aumento de 15% dos salários dos funcionários.
 '''
 salario = 750
 aumento = 15
-novo_salario = salario + (salario * aumento / 100)
+novoSalario = salario + (salario * aumento / 100)
 
-print(f'Houve um aumento de 15% no salario, valor atualizado: R${novo_salario:.2f}')
+print(f'Houve um aumento de 15% no salario, valor atualizado: R${novoSalario:.2f}')

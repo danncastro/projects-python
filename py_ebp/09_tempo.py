@@ -14,6 +14,6 @@ minutos = int(input('Digite o valor de minutos: '))
 horas = int(input('Digite o valor de horas: '))
 dias = int(input("Digite o valor de dias: "))
 
-segundos_total = dias * 24 * 3600 + horas * 3600 + minutos * 60 + segundos
+segundosTotal = dias * 24 * 3600 + horas * 3600 + minutos * 60 + segundos
 
-print(f'O valor total de segundos é: {segundos_total}s')
+print(f'O valor total de segundos é: {segundosTotal}s')
