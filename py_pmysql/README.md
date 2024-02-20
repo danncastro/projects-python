@@ -7,3 +7,4 @@
 ## Ferramentas necessárias
 
 - pyqt5-tools
+- mysql-community
