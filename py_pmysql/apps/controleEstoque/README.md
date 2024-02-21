@@ -17,6 +17,13 @@
 2. Preço
 3. Quantidade
 
+## Informações de dados atribuidas ao banco
+
+1. id
+2. produto
+3. preco
+4. quantidade
+
 ## Telas configuradas
 
 1. telaFormulario (Caixas para cadastro de produtos)

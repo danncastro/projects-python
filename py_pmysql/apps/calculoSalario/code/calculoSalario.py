@@ -15,7 +15,7 @@ def calculoSalario():
     formulario.labelFgtsAnual.setText(str(f'R${FgtsAnual:.2f}'))
 
 app = QtWidgets.QApplication([])
-formulario = uic.loadUi('/home/dgutierres/projects-python/py_pmysql/calculoSalario/front/telaSalario.ui')
+formulario = uic.loadUi('telaSalario.ui')
 formulario.buttonCalcular.clicked.connect(calculoSalario)
 
 formulario.show()

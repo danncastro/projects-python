@@ -35,7 +35,7 @@
      <string notr="true">color:rgb(0, 70, 150)</string>
     </property>
     <property name="text">
-     <string>Alteração Cadastrais</string>
+     <string>Alterações de Registro</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

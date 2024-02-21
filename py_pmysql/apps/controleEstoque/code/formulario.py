@@ -1,6 +1,9 @@
 from PyQt5 import uic, QtWidgets
 import mysql.connector
 
+from relatorio import relatorio
+from alteracaoCadastral import alteracaoCadastral
+
 conexao = mysql.connector.connect(
     host = 'localhost',
     user = 'pmysql',
@@ -8,8 +11,58 @@ conexao = mysql.connector.connect(
     database = 'CONTROLE_DE_ESTOQUE'
 )
 
+numeroID = 0
+
+def removerCadastro():
+    removerDados = listarCadastro.tableWidget.currentRow()
+    listarCadastro.tableWidget.removeRow(removerDados)
+    
+    cursor = conexao.cursor()
+    cursor.execute('SELECT id FROM cadastro_de_produtos')
+    leituraBanco = cursor.fetchall()
+
+    valorID = leituraBanco [removerDados][0]
+    cursor.execute(f'DELETE FROM cadastro_de_produtos WHERE id = {str(valorID)}')
+    conexao.commit()
+
+def alterarCadastro():
+    alterarCadastro.show()
+    global numeroID
+
+    dados = listarCadastro.tableWidget.currentRow()
+    cursor = conexao.cursor()
+    cursor.execute('SELECT id FROM cadastro_de_produtos')
+    leituraBanco = cursor.fetchall()
+
+    valorId = leituraBanco [dados][0]
+    cursor.execute(f'SELECT * FROM cadastro_de_produtos WHERE id = {str(valorId)}')
+    leituraBanco = cursor.fetchall()
+    
+    numeroID = valorId
+    
+    alterarCadastro.txtAlteracaCadastralId.setText(str(leituraBanco [0][0]))
+    alterarCadastro.txtAlteracaoCadastralProduto.setText(str(leituraBanco [0][1]))
+    alterarCadastro.txtAlteracaoCadastralPreco.setText(str(leituraBanco [0][2]))
+    alterarCadastro.txtAlteracaoCadastralQuantidade.setText(str(leituraBanco [0][3]))
+
+def salvarAlteracoes():
+    global numeroID
+
+    id = alterarCadastro.txtAlteracaCadastralId.text()
+    produto = alterarCadastro.txtAlteracaoCadastralProduto.text()
+    preco = alterarCadastro.txtAlteracaoCadastralPreco.text()
+    quantidade = alterarCadastro.txtAlteracaoCadastralQuantidade.text()
+    
+    cursor = conexao.cursor()
+    cursor.execute(f"UPDATE cadastro_de_produtos SET id='{id}', produto='{produto}', preco='{preco}', quantidade='{quantidade}' WHERE id='{numeroID}'")
+    
+    alterarCadastro.close()
+    listarCadastro.close()
+    conexao.commit()
+
 def listarCadastro():
     listarCadastro.show()
+
     cursor = conexao.cursor()
     comandoSqlListar = 'SELECT * FROM cadastro_de_produtos'
     cursor.execute(comandoSqlListar)
@@ -40,12 +93,17 @@ def cadastroProduto():
     formulario.labelConfirmacaoInTela.setText('PRODUTO CADASTRADO COM SUCESSO')
 
 app = QtWidgets.QApplication([])
-formulario=uic.loadUi('/home/dgutierres/projects-python/py_pmysql/apps/controleEstoque/front/telaFormulario.ui')
+formulario = uic.loadUi('telaFormulario.ui')
 formulario.buttonCadastrar.clicked.connect(cadastroProduto)
 
-from relatorio import relatorio
 formulario.buttonRelatorio.clicked.connect(listarCadastro)
 listarCadastro = relatorio
+
+listarCadastro.buttonAlterarRegistro.clicked.connect(alterarCadastro)
+listarCadastro.buttonApagarRegistro.clicked.connect(removerCadastro)
+alterarCadastro = alteracaoCadastral
+
+alterarCadastro.buttonConfirmarAlteracoes.clicked.connect(salvarAlteracoes)
 
 formulario.show()
 app.exec()

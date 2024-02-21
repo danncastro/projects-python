@@ -9,6 +9,11 @@
 - pyqt5-tools
 - mysql-community
 - mysql-connector-python
+- pyinstaller
+
+### Tornando codigo executavel
+
+- pyinstaller --windowed formulario.py
 
 ## Subindo Mysql in Docker
 
