@@ -1,4 +1,6 @@
-## Criação da Base de dados e da Tabela
+# PASSO 1
+
+## Criação da Base de dados e da Tabela (DDL - Data Definition Language)
 '''
 Principais Tipos de Dados
 
