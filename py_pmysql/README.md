@@ -1,49 +1,64 @@
-# Dependências necessarias
+# Projeto Python - Controle de Estoque
 
-- python 3.12+
-- pip
-- pyqt5
+## Objetivo do programa
 
-## Ferramentas necessárias
+- Permitir o controle completo do estoque de uma empresa.
+- Exibir telas de fácil acesso e intuitivas, com ações claras e precisas, visando a facilidade de operações por pessoas não especializadas em Software.
 
-- pyqt5-tools
-- mysql-community
-- mysql-connector-python
-- pyinstaller
+1. Cadastrar Dados
+2. Recuperar Dados
+3. Alterar Dados (Update)
+4. Destrui Dados (Delete)
+5. Utilização do conceito de CRUD(C-Create, R-Read, U-Update, D-Delete)
 
-### Tornando codigo executavel
+## Informações de dados do programa
 
-- pyinstaller --windowed formulario.py
+1. Produto
+2. Preço
+3. Quantidade
 
-## Subindo Mysql in Docker
+## Informações de dados atribuidas ao banco
 
-### Baixar uma imagem do Mysql
+1. id
+2. produto
+3. preco
+4. quantidade
 
-- docker pull mysql/mysql-server
+## Telas configuradas
 
-### Executando container padrão
+1. telaFormulario (Caixas para cadastro de produtos)
+2. telaRelatorio (Relatório de produtos)
+3. telaAlteracaoCadastral (Insersão de informações)
 
-- docker run -d --name mysql_server -e MYSQL_ROOT_PASSWORD=1234 mysql/mysql-server
+## Caixas de interação com usuário
 
-### Persistencia de dados
+1. telaFormulario
+   a. txtProduto
+   b. txtPreco
+   c. txtQuantidade
 
-- docker container run -dit --name mysql_server --name mysql_server -e MYSQL_ROOT_PASSWORD=1234 -v /home/pmysql/projects-python/py_pmysql/database/cadastroProdutos/volumes:/var/lib/mysql mysql/mysql-server
+2. telaRelatorio
 
-### Bind da porta para expor externo
+3. telaAlteracaoCadastral
+   a. txtAlteracaCadastralId
+   b. txtAlteracaoCadastralProduto
+   c. txtAlteracaoCadastralPreco
+   d. txtAlteracaoCadastralQuantidade
 
-- docker run -d --name mysql_server --env MYSQL_USER=pmysql --env MYSQL_PASSWORD=Senha@123 -v /home/pmysql/projects-python/py_pmysql/database/cadastroProdutos/volumes:/var/lib/mysql -p 3306:3306 mysql/mysql-server
+## Botões configurados
 
-### Configurações de segurança
+1. telaFormulario
+   a. buttonCadastrar
+   b. buttonRelatorio
 
-- MYSQL_RANDOM_ROOT_PASSWORD: define uma senha aleatória para o usuário root do MySQL.
-- MYSQL_USER e MYSQL_PASSWORD: cria um usuário com acesso restrito ao banco de dados.
-- MYSQL_ROOT_PASSWORD: Cria uma senha para o root
-- MYSQL_DATABASE: cria um banco de dados específico para a aplicação
+2. telaRelatorio
+   a. buttonAlterarRegistro
+   b. buttonApagarRegistro
 
-- docker container run -dit --name mysql_server --env MYSQL_RANDOM_ROOT_PASSWORD=yes --env MYSQL_DATABASE=produtos -p 3306:3306 mysql/mysql-server
-- docker container logs mysql_server | grep 'GENERATED ROOT PASSWORD:'
+3. telaAlteracaoCadastral
+   a. buttonConfirmarAlteracoes
 
-- CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'Senha@123';
-- GRANT ALL PRIVILEGES ON *.* TO 'pmysql'@'localhost';
-- GRANT ALL PRIVILEGES ON nome_database.* TO 'pmysql'@'%';
-- FLUSH PRIVILEGES;
+## Labels configuradas
+
+1. telaFormulario
+   a. labelConfirmacaoInTela
